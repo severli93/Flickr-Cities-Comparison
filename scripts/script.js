@@ -142,7 +142,7 @@ function drawInitial(boston,hefei,url1,url2){
                         .duration(400)
                         .style("opacity", 0)
     })
-        .call(popNodes1)
+        .call(popNodes)
 
 
     //node1

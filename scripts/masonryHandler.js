@@ -11,7 +11,7 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
         .append("div")
         .classed("grid-item", true);
 
-    gridItem.append("img")
+    var gridItem2=gridItem.append("img")
         .attr("src", function(d) {
             return d.image_url;
         })
@@ -25,6 +25,7 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
             return d.image_url;
         })
         .attr("style", "opacity: 0;")
+        gridItem2
         .transition()
         .delay(function(d, i) {
             return 10 * i;
@@ -32,7 +33,8 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
         .attr("style", "opacity: 1;")
         .each("start", function() {
             transitions++;
-        }).each("end", function(d,i) {
+        })
+        .each("end", function(d,i) {
             if (--transitions === 0) {
                 gridElement.node().addEventListener('click', function(event) {
                     var src = d3.select(event.target).attr("src")
@@ -63,8 +65,30 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
                     msnry.layout();
                 });
             }
-        });
+        })
+gridItem2
+.on('mouseover',function(d){
+    console.log(d);
+    d3.select(this)
+        .style('stroke',"red")
+        .style('stroke-width',10)
+            div.transition()
+                .duration(10)
+                .style("opacity",.9)
+                .style("left",width1*.9+ "px")
+                .style("top", (d3.event.pageY - 30) + "px");
+            div .html("Name: "+d.name+"<br/>Description: "+d.description+"<br/> Rating: "+d.highest_rating)
+            .style.textAlign = "left";
 
+
+})
+.on('mouseout',function(){
+    d3.select(this)
+        .style('stroke-width','0')
+            div.transition()
+                .duration(400)
+                .style("opacity", 0)
+})
     dispatch.on(dispatchEventName, function(index, data) {
 
         // console.log(index, data)

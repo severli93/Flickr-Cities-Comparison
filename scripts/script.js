@@ -72,8 +72,8 @@ var Key = "hVAGGTZYJn3vPA29Oi1iqBRSquWXXpmG331W20Ql"
 var Secret = "a53Hn3Z461vithBUzVhxVNnMRrTYh6rWYu6cw75n"
 var baseFlickrUrl = "https://api.500px.com/v1/photos/search?format=json&nojsoncallback=1&consumer_key="+ Key //format=json requires a json file
 
-var url1Name = baseFlickrUrl + "&term=Boston&rpp=100&image_size=2,31";//&nojsoncallback=1 means return json file
-var url2Name = baseFlickrUrl + "&term=Hefei&rpp=100&image_size=2,31";
+var url1Name = baseFlickrUrl + "&term=Boston&rpp=150&image_size=2,31";//&nojsoncallback=1 means return json file
+var url2Name = baseFlickrUrl + "&term=Hefei&rpp=150&image_size=2,31";
 
 queue()
     //.defer(d3.json,'data/bos_census_blk_group.geojson')
@@ -130,7 +130,7 @@ function drawInitial(boston,hefei,url1,url2){
                         .style("opacity",.9)
                         .style("left",width1*.9+ "px")
                         .style("top", (d3.event.pageY - 30) + "px");
-                    div .html("City: Boston<br/>"+"Population: 645,966<br/>"+"Latitude,Longitude:"+"(42.3601° N, 71.0589° W)<br/>"+"Area: 232.14 Km²")
+                    div .html("City: Boston<br/>"+"Population: 645,966<br/>"+"Latitude,Longitude:"+"(42.3601° N, 71.0589° W)<br/>"+"Area: 232.14 Km²"+“GDP: 382.46 Billion USD<br/>”)
                     .style.textAlign = "left";
 
 
@@ -147,7 +147,7 @@ function drawInitial(boston,hefei,url1,url2){
 
     //node1
     var fillColor1 = d3.scale.category10();
-    var nodes1 = d3.range(100).map(function(i) {return {index: i};});
+    var nodes1 = d3.range(150).map(function(i) {return {index: i};});
     var force1 = d3.layout.force()
         .nodes(nodes1)
         .size([(width1+width2), (height1+height2)/2])
@@ -234,7 +234,7 @@ function drawInitial(boston,hefei,url1,url2){
                         .style("opacity",.9)
                         .style("left",width2*2+ "px")
                         .style("top", (d3.event.pageY - 30) + "px");
-                    div .html("City: Hefei<br/>"+"Population: 7,696,000<br/>"+"Latitude,Longitude:"+"(31.8206° N, 117.2272° E)<br/>"+"Area: 403 Km²")
+                    div .html("City: Hefei<br/>"+"Population: 7,696,000<br/>"+"Latitude,Longitude:"+"(31.8206° N, 117.2272° E)<br/>"+"Area: 403 Km²<br/>"+“GDP: 86 Billion USD<br/>”)
 
         })
         .on('mouseout',function(){
@@ -249,7 +249,7 @@ function drawInitial(boston,hefei,url1,url2){
 
    //node2
     var fillColor2 = d3.scale.category10();
-    var nodes2 = d3.range(100).map(function(i) {return {index: i};});
+    var nodes2 = d3.range(150).map(function(i) {return {index: i};});
     var force2 = d3.layout.force()
         .nodes(nodes2)
         .size([(width1+width2), (height1+height2)/2])

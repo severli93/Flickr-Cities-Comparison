@@ -234,7 +234,7 @@ function drawInitial(boston,hefei,url1,url2){
                         .style("opacity",.9)
                         .style("left",width2*2+ "px")
                         .style("top", (d3.event.pageY - 30) + "px");
-                    div .html("City: Hefei<br/>"+"Population: 7,696,000<br/>"+"Latitude,Longitude:"+"(31.8206° N, 117.2272° E)<br/>"+"Area: 403 Km²<br/>"+“GDP: 86 Billion USD<br/>”)
+                    div .html("City: Hefei<br/>"+"Population: 7,696,000<br/>"+"Latitude,Longitude:"+"(31.8206° N, 117.2272° E)<br/>"+"Area: 403 Km²<br/>"+"GDP: 86 Billion USD<br/>")
 
         })
         .on('mouseout',function(){

@@ -130,8 +130,8 @@ function drawInitial(boston,hefei,url1,url2){
                         .style("opacity",.9)
                         .style("left",width1*.9+ "px")
                         .style("top", (d3.event.pageY - 30) + "px");
-                    div .html("City: Boston<br/>"+"Population: 645,966<br/>"+"Latitude,Longitude:"+"(42.3601° N, 71.0589° W)<br/>"+"Area: 232.14 Km²"+"GDP: 382.46 Billion USD<br/>"")
-                    .style.textAlign = "left";
+                    div .html("City: Boston<br/>"+"Population: 645,966<br/>"+"Latitude,Longitude:"+"(42.3601° N, 71.0589° W)<br/>"+"Area: 232.14 Km²"+"GDP: 382.46 Billion USD<br/>")
+
 
 
         })

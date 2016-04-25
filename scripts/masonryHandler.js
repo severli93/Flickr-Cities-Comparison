@@ -75,10 +75,10 @@ gridItem2
             div.transition()
                 .duration(10)
                 .style("opacity",.9)
-                .style("left",width1*.9+ "px")
+                .style("left",width1+ "px")
                 .style("top", (d3.event.pageY - 30) + "px");
             div .html("Name: "+d.name+"<br/>Description: "+d.description+"<br/> Rating: "+d.highest_rating)
-            .style.textAlign = "left";
+
 
 
 })

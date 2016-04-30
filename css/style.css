@@ -1,5 +1,6 @@
 
 
+
 .header-cont{
     width:100%;
     position:fixed;
@@ -12,7 +13,7 @@
 
 body { font-family: sans-serif; }
 
-.content{ margin: 50px auto;}
+.content{ margin: 30px auto;}
 
 .title{margin-left: 20px ;}
 
@@ -97,12 +98,11 @@ body { font-family: sans-serif; }
 /*tooltip*/
 .tooltip {
 	position: absolute;
-    font-size: 15 px;
+  font-size: 15 px;
 	text-align: left;
 	fill:rgb(120,120,120);
 	font-weight: bold;
-	width: 200px;
-	height: 100%;
+	width: 300px;
 	padding: 5px;
 	font: 15px sans-serif;
 	background:rgb(255,255,255);

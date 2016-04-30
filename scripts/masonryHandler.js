@@ -68,40 +68,28 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
         })
 gridItem2
 .on('mouseover',function(d){
-    console.log(d);
-    d3.select(this)
-        .style('stroke',"red")
-        .style('stroke-width',10)
-            div.transition()
-                .duration(10)
-                .style("opacity",.9)
-                .style("left",width1+ "px")
-                .style("top", (d3.event.pageY - 30) + "px");
-            div .html("Name: "+d.name+"<br/>Description: "+d.description+"<br/> Rating: "+d.highest_rating)
+          tooltip.transition().duration(200)
+            .style("opacity",.9)
+            .style("left", (d3.event.pageX +margin.r) + "px")
+            .style("top", (d3.event.pageY - 30) + "px");
 
-
-
+          tooltip.html("Name: "+d.name+"<br/>Description: "+d.description+"<br/> Rating: "+d.highest_rating)
+            .style.textAlign = "left";
 })
 .on('mouseout',function(){
-    d3.select(this)
-        .style('stroke-width','0')
-            div.transition()
-                .duration(400)
-                .style("opacity", 0)
+    tooltip.transition().duration(200).style("opacity", 0)
 })
-    dispatch.on(dispatchEventName, function(index, data) {
+    dispatch.on(dispatchEventName, function(index) {
 
-        // console.log(index, data)
         gridItem.each(function(_, i) {
             if (i == index) {
-                // console.log(this)
                 this.classList.add('grid-item--gigante');
                 d3.select(this.firstChild)
                     .attr("src", function(d) {
                         var imageElement = d3.select(this);
                         return imageElement.attr("larger-src");
                     })
-                    // trigger layout
+              // trigger layout
                 msnry.layout();
             } else {
                 this.classList.remove('grid-item--gigante');

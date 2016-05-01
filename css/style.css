@@ -15,7 +15,7 @@ body { font-family: sans-serif; }
 .title{margin-left: 20px ;}
 
 .MapPlots {height: 550px;  }
-.Charts {height: 510px;}
+.Charts {height: 500px; margin-bottom: 10px auto;}
 #Chart1 {height: 33.3%}
 #Chart2 {height: 33.3%}
 #Chart3 {height: 33.3%}

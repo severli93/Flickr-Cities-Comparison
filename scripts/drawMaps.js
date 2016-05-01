@@ -14,32 +14,7 @@ console.log(cities);
       .append('path')
       .attr('class','map-block')
       .attr('d', pathGenerator1)
-<<<<<<< HEAD
-      .style('fill',function(d){return '#dddddd'})
       .style('fill-opacity', 0.7)
-      .on('mouseover',function(d){
-        d3.select(this)
-          .transition().duration(200)
-          // .style('fill',function(d){return 'red'})
-        var x = d3.mouse(this)[0];
-        tooltip.transition().duration(200)
-          .style("opacity",.9)
-          .style("left", (d3.event.pageX +margin.r) + "px")
-          .style("top", (d3.event.pageY - 30) + "px");
-        tooltip.html("City: Boston<br/>"+"Population: 645,966<br/>"+"Latitude,Longitude:"
-                +"(42.3601° N, 71.0589° W)<br/>"+"Area: 232.14 Km²"+"GDP: 382.46 Billion USD<br/>")
-                .style.textAlign = "left";
-      })
-      .on('mouseout',function(){
-        d3.select(this)
-          .transition().duration(200)
-          // .style('fill',function(d){return 'red'})
-        tooltip.transition().duration(200).style("opacity", 0)
-  })
-=======
-      // .style('fill',function(d){return '#dddddd'})
-      .style('fill-opacity', 0.7)
->>>>>>> gh-pages
 
 
   var mapBCenter=map1
@@ -96,11 +71,6 @@ console.log(cities);
 
   map1.style('opacity',1e-6)
       .transition().duration(1000).style('opacity',1);
-<<<<<<< HEAD
-  d3.select("#MapPlot1")
-      .on('mousedown',mousedown1)
-=======
->>>>>>> gh-pages
 
   function mousedown1() {
       nodes1.forEach(function(o, i) {
@@ -122,34 +92,9 @@ console.log(cities);
       .append('path')
       .attr('d', pathGenerator2)
       .attr('transform','translate('+(width1/2)*0 +','+(height1/2) *.2+')')
-<<<<<<< HEAD
-      .style('fill',function(d){return '#dddddd'})
-      .style('stroke-width','.3px')
-      .style('fill-opacity',.7)
-      .on('mouseover',function(d){
-        d3.select(this)
-          .transition().duration(200)
-          // .style('fill',function(d){return 'red'})
-        var x = d3.mouse(this)[0];
-        tooltip.transition().duration(200)
-          .style("opacity",.9)
-          .style("left", (d3.event.pageX +margin.r) + "px")
-          .style("top", (d3.event.pageY - 30) + "px");
-        tooltip.html("City: Hefei<br/>"+"Population: 7,696,000<br/>"+"Latitude,Longitude:"
-        +"(31.8206° N, 117.2272° E)<br/>"+"Area: 403 Km²<br/>"+"GDP: 86 Billion USD<br/>")
-                .style.textAlign = "left";
-      })
-      .on('mouseout',function(){
-        d3.select(this)
-          .transition().duration(200)
-          // .style('fill',function(d){return 'red'})
-        tooltip.transition().duration(200).style("opacity", 0)
-  })
-=======
       // .style('fill',function(d){return '#dddddd'})
       .style('stroke-width','.3px')
       .style('fill-opacity',.7)
->>>>>>> gh-pages
 
 
   var mapHCenter=map2
@@ -172,10 +117,6 @@ console.log(cities);
       .on("tick", tick2)
       .start();
   function tick2(e){
-<<<<<<< HEAD
-      // Push different nodes in different directions for clustering.
-=======
->>>>>>> gh-pages
       //console.log('e',e);
       var k = e.alpha;
       //console.log('k',k);

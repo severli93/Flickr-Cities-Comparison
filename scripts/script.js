@@ -21,28 +21,14 @@ var map1 = d3.select("#MapPlot1")
     .attr('width', width1)
     .attr('height', height1)
     .append('g')
-<<<<<<< HEAD
-    .attr('class','canvas-map1')
-    .attr('transform','translate('+(margin.l)*0+','+margin.t+')');
-=======
     .attr('class', 'canvas-map1')
     .attr('transform', 'translate(' + (margin.l) * (0) + ',' + margin.t + ')');
-
->>>>>>> gh-pages
 
 var map2 = d3.select("#MapPlot2")
     .append('svg')
     .attr('width', width2)
     .attr('height', height2)
     .append('g')
-<<<<<<< HEAD
-    .attr('class','canvas-map1')
-    .attr('transform','translate('+(margin.l)+','+margin.t+')');
-
-var tooltip=d3.select('body').append('div')
-        .attr('class','tooltip')
-        .style('opacity',0);
-=======
     .attr('class', 'canvas-map1')
     .attr('transform', 'translate(' + (margin.l) * 0 + ',' + margin.t + ')');
 
@@ -56,7 +42,6 @@ d3.select('.tipH')
         return "top: " + (height1 - parseInt(d3.select(this).style("height"), 10)) + "px; ";
     });
 
->>>>>>> gh-pages
 //TODO: set up a mercator projection, and a d3.geo.path() generator
 //Center the projection at the center of Boston
 var bostonLngLat = [-71.088066, 42.315520]; //from http://itouchmap.com/latlong.html
@@ -78,51 +63,13 @@ var pathGenerator1 = d3.geo.path().projection(projection1);
 var pathGenerator2 = d3.geo.path().projection(projection2);
 //
 //TODO: create a color scale
-<<<<<<< HEAD
-//var colorScale=d3.scale.linear().domain([0,34]).range(['white','red']);
-//var colorType=["#9030FF",'2FFF22','yellow',"#FF34D6"];
-=======
-
->>>>>>> gh-pages
 var mapBNodes;
 var mapHNodes;
 //TODO: create a d3.map() to store the value of airbnb room number per block group
 var airbnbRoom = d3.map();
 //TODO: import data, parse, and draw
 
-<<<<<<< HEAD
- var q=queue()
-    .defer(d3.json,'data/bos_neighborhoods.json')
-    .defer(d3.json,'data/hefei.geojson')
-    .defer(d3.csv,'data/citiesData.csv')
-    q.await(drawInitial)
 
-function drawInitial(error,boston,hefei,cities){
-  var obj = drawMaps(map1,map2,boston,hefei,cities,width1,height1,margin)
-}
-
-function loadImages(sort) {
-  var Key = "hVAGGTZYJn3vPA29Oi1iqBRSquWXXpmG331W20Ql"
-  var Secret = "a53Hn3Z461vithBUzVhxVNnMRrTYh6rWYu6cw75n"
-  var baseFlickrUrl = "https://api.500px.com/v1/photos/search?format=json&nojsoncallback=1&consumer_key="+ Key //format=json requires a json file
-
-  var url1Name = baseFlickrUrl + "&term=Boston&rpp=150&image_size=2,31&sort="+sort;//&nojsoncallback=1 means return json file
-  var url2Name = baseFlickrUrl + "&term=Hefei&rpp=150&image_size=2,31&sort="+sort;;
-
-
-q  .defer(d3.json,''+url1Name)
-q  .defer(d3.json,''+url2Name)
-q.await(dataLoaded)
-}
-
-var dispatch = d3.dispatch('nodeBSelect','nodeHSelect')
-
-function dataLoaded(err,_,_,_,url1,url2){
-console.log(url1);
-  masonryHandler(url1, d3.select("#PhotosB"), "nodeBSelect");
-  masonryHandler(url2, d3.select("#PhotosH"), "nodeHSelect");
-}
-=======
 var q = queue()
     .defer(d3.json, 'data/bos_neighborhoods.json')
     .defer(d3.json, 'data/hefei.geojson')
@@ -203,4 +150,3 @@ function drawCharts(data, height, width, div, yParam) {
         masonryHandler(url1, d3.select("#PhotosB"), "nodeBSelect");
         masonryHandler(url2, d3.select("#PhotosH"), "nodeHSelect");
     }
->>>>>>> gh-pages

@@ -3,3 +3,35 @@ $color: rgb(255, 235, 157);
 .MapPlots{
   color: $color;
 }
+
+.barchartDiv {
+  path {
+    fill: none;
+  }
+  text {
+    color: #AAA;
+  }
+}
+
+$boston: rgb(200, 70, 70);
+$hefei: rgb(70, 70, 200);
+
+.boston {
+  fill: $boston;
+}
+
+.hefei {
+  fill: $hefei;
+}
+
+#MapPlot1 {
+  path {
+    fill: rgba(200, 70, 70, 0.3);
+  }
+}
+
+#MapPlot2 {
+  path{
+    fill: rgba(70, 70, 200, 0.3);
+  }
+}

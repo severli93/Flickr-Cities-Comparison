@@ -17,8 +17,13 @@ body { font-family: sans-serif; }
 
 .title{margin-left: 20px ;}
 
-#MapPlot1 {height: 500px;  }
-#MapPlot2 {  height: 500px;  }
+.MapPlots {height: 550px;  }
+/*#MapPlots {height: 550px;  }
+#MapPlot2 {height: 550px;  }*/
+.Charts {height: 550px;}
+#Chart1 {height: 33.3%}
+#Chart2 {height: 33.3%}
+#Chart3 {height: 33.3%}
 
 .node {  stroke-width: 1.5px;  }
 * { box-sizing: border-box; }
@@ -97,15 +102,30 @@ body { font-family: sans-serif; }
 
 /*tooltip*/
 .tooltip {
-	position: absolute;
   font-size: 15 px;
 	text-align: left;
-	fill:rgb(120,120,120);
+	color:rgb(50,50,50);
 	font-weight: bold;
-	width: 300px;
+	width: 252px;
 	padding: 5px;
 	font: 15px sans-serif;
 	background:rgb(255,255,255);
 	border: 0px;
 	border-radius: 8px;
-	pointer-events: none;}
+	pointer-events: none;
+  height: 95px;
+  opacity: 0.9;
+  position: absolute;
+  float: right;
+}
+
+.tipB {
+  text-align: right;
+}
+
+.tipH {
+  text-align: left;
+}
+.City{
+  font-weight: bolder;
+}

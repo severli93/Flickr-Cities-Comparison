@@ -16,7 +16,6 @@ console.log(cities);
       .attr('d', pathGenerator1)
       .style('fill-opacity', 0.7)
 
-
   var mapBCenter=map1
       .append('g')
       .attr('class','CenterP')
@@ -27,7 +26,6 @@ console.log(cities);
       .style('fill','rgba(250,0,10,0)')
       .attr('transform','translate('+(width1/2) +','+(height1/2)+')')
       .call(popNodes2)
-
 
   //node1
   var fillColor1 = d3.scale.category10();

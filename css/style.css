@@ -1,6 +1,3 @@
-
-
-
 .header-cont{
     width:100%;
     position:fixed;
@@ -18,8 +15,7 @@ body { font-family: sans-serif; }
 .title{margin-left: 20px ;}
 
 .MapPlots {height: 550px;  }
-/*#MapPlots {height: 550px;  }
-#MapPlot2 {height: 550px;  }*/
+
 .Charts {height: 550px;}
 #Chart1 {height: 33.3%}
 #Chart2 {height: 33.3%}

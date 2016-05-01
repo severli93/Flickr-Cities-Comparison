@@ -66,6 +66,7 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
                 });
             }
         })
+<<<<<<< HEAD
 gridItem2
 .on('mouseover',function(d){
 
@@ -82,6 +83,10 @@ gridItem2
 })
     dispatch.on(dispatchEventName, function(index) {
 
+=======
+    dispatch.on(dispatchEventName, function(index) {
+
+>>>>>>> gh-pages
         gridItem.each(function(_, i) {
             if (i == index) {
                 this.classList.add('grid-item--gigante');

@@ -12,9 +12,10 @@ var width1 = document.getElementById('MapPlot1').parentElement.clientWidth - mar
 
 var width2 = document.getElementById('MapPlot2').parentElement.clientWidth - margin.r,
     height2 = d3.select(".MapPlots").node().clientHeight - margin.t - margin.b;
-
+d3.select(d3.select(".Charts").node().parentElement).style('width',innerWidth/12).style('left',innerWidth*5/12+'px').style('top',d3.select('.content').node().offsetHeight+60+"px")
 var width3 = d3.select(".Charts").node().clientWidth - margin.r,
     height3 = (d3.select(".Charts").node().clientHeight) / 3 - margin.t - margin.b;
+
 
 var map1 = d3.select("#MapPlot1")
     .append('svg')
@@ -35,11 +36,11 @@ var map2 = d3.select("#MapPlot2")
 d3.select('.tipB')
     .attr("style", function(d) {
         return "top: " + (height1 - parseInt(d3.select(this).style("height"), 10)) + "px; " +
-            "left:" + (width1 - parseInt(d3.select(this).style("width"), 10)) + "px";
+            "left:" + (width1 - parseInt(d3.select(this).style("width"), 10) +30 - innerWidth/12) + "px";
     });
 d3.select('.tipH')
     .attr("style", function(d) {
-        return "top: " + (height1 - parseInt(d3.select(this).style("height"), 10)) + "px; ";
+        return "top: " + (height1 - parseInt(d3.select(this).style("height"), 10)) + "px; left: "+innerWidth/12+"px";
     });
 
 //TODO: set up a mercator projection, and a d3.geo.path() generator

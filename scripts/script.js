@@ -84,7 +84,11 @@ function drawInitial(error, boston, hefei, cities) {
 }
 
 function drawCharts(data, height, width, div, yParam) {
-    var MaxPop = d3.max(data, function(d) {
+var title;
+  if(yParam=="area"){ title="Area/Km²"}
+  if(yParam=="pop"){ title="Population"}
+  if(yParam=="gdp"){ title="GDP/Billion $"}
+    var MaxValue = d3.max(data, function(d) {
         return +d[yParam];
     })
     var chart1 = div
@@ -100,36 +104,55 @@ function drawCharts(data, height, width, div, yParam) {
     var axisX = d3.svg.axis()
         .scale(scalex)
         .orient("bottom");
-    chart1.append("g")
-      .attr("transform", "translate("+10+", "+(height+margin.t)+")")
-      .call(axisX);
+    // chart1.append("g")
+    //     .attr("transform", "translate("+10+", "+(height+margin.t)+")")
+    //     .call(axisX);
     var scaley = d3.scale.linear()
-        .domain([0, MaxPop])
-        .range([height-margin.t, 0]);
-
+        .domain([0, MaxValue])
+        .range([height-margin.t, margin.t]);
     var bar1 = chart1.append("g")
       .attr('class', 'bar')
-      .attr('transform', 'translate(' + (margin.l) * (0) + ',' + margin.t + ')')
+      .attr('transform', 'translate(' + (margin.l) * (.1) + ',' + margin.t + ')')
       .selectAll('rect')
       .data(data)
       .enter()
+      .append('g')
+      .attr('class', function(d) {  return d.name.toLowerCase()})
+
     bar1
       .append('rect')
-      .attr('class', function(d) {
-              return d.name.toLowerCase()
-          })
-          .attr('x', function(d) {
-              return scalex(d.name)
-          })
-          .attr('width', 15)
-          .attr('height', function(d) {
-              return height - scaley(d[yParam])
-          })
-          .attr('y', function(d) {
-              return scaley(d[yParam])
-          })
-      }
+      .attr('x', function(d) {  return scalex(d.name)})
+      .attr('width', 15)
+      .attr('height', 0)
+      .attr('y', height)
+      .style('opacity',0)
+      .transition()
+      .duration(1500)
+      .attr('height', function(d) {  return height - scaley(d[yParam])})
+      .attr('y', function(d) {return scaley(d[yParam])})
+      .style('opacity',1)
+    bar1
+      .append('text')
+      .text(function(d){return d[yParam]})
+      .attr('x',function(d){ return scalex(d.name)+7.5})
+      .attr('y',function(d){ return scaley(d[yParam])})
+      .attr('text-anchor','middle')
+      .attr("transform", "translate("+0+", "+(-margin.t)*.3+")")
+      .style('opacity',0)
+      .transition()
+      .duration(2000)
+      .style('opacity',1)
 
+    bar1
+    .append('text')
+    .text(title)
+    .attr('fill','rgb(50,50,50)')
+    .attr('x',width/2)
+    .attr('text-anchor','middle')
+    .attr("transform", "translate("+0+", "+(height+margin.t)+")")
+    .style('font-style','italic')
+
+}
     function loadImages(sort) {
         var Key = "hVAGGTZYJn3vPA29Oi1iqBRSquWXXpmG331W20Ql"
         var Secret = "a53Hn3Z461vithBUzVhxVNnMRrTYh6rWYu6cw75n"
@@ -146,7 +169,6 @@ function drawCharts(data, height, width, div, yParam) {
     var dispatch = d3.dispatch('nodeBSelect', 'nodeHSelect')
 
     function dataLoaded(err, _, _, _, url1, url2) {
-        console.log(url1);
         masonryHandler(url1, d3.select("#PhotosB"), "nodeBSelect");
         masonryHandler(url2, d3.select("#PhotosH"), "nodeHSelect");
     }

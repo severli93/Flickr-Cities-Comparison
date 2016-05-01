@@ -3,7 +3,6 @@ function drawMaps(map1,map2,boston,hefei,cities, width1, height1,margin) {
   // draw maps
   var newCensusFeatures=boston.features;
 //1. draw boston outline to show the neighbor blocks' name
-console.log(cities);
   var mapB = map1
       .append('g')
       .attr('class','MapBoston')

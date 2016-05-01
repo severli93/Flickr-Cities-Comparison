@@ -15,8 +15,7 @@ body { font-family: sans-serif; }
 .title{margin-left: 20px ;}
 
 .MapPlots {height: 550px;  }
-
-.Charts {height: 550px;}
+.Charts {height: 510px;}
 #Chart1 {height: 33.3%}
 #Chart2 {height: 33.3%}
 #Chart3 {height: 33.3%}
@@ -125,4 +124,5 @@ body { font-family: sans-serif; }
 }
 .City{
   font-weight: bolder;
+  /*font-style: italic;*/
 }

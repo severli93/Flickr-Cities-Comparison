@@ -66,8 +66,27 @@ function masonryHandler(data, d3Selection, dispatchEventName) {
                 });
             }
         })
+<<<<<<< HEAD
+gridItem2
+.on('mouseover',function(d){
+
+          tooltip.transition().duration(200)
+            .style("opacity",.9)
+            .style("left", (d3.event.pageX +margin.r) + "px")
+            .style("top", (d3.event.pageY - 30) + "px");
+
+          tooltip.html("Name: "+d.name+"<br/>Description: "+d.description+"<br/> Rating: "+d.highest_rating)
+            .style.textAlign = "left";
+})
+.on('mouseout',function(){
+    tooltip.transition().duration(200).style("opacity", 0)
+})
     dispatch.on(dispatchEventName, function(index) {
 
+=======
+    dispatch.on(dispatchEventName, function(index) {
+
+>>>>>>> gh-pages
         gridItem.each(function(_, i) {
             if (i == index) {
                 this.classList.add('grid-item--gigante');

@@ -14,7 +14,6 @@ console.log(cities);
       .append('path')
       .attr('class','map-block')
       .attr('d', pathGenerator1)
-      // .style('fill',function(d){return '#dddddd'})
       .style('fill-opacity', 0.7)
 
 

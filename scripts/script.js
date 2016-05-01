@@ -24,7 +24,6 @@ var map1 = d3.select("#MapPlot1")
     .attr('class', 'canvas-map1')
     .attr('transform', 'translate(' + (margin.l) * (0) + ',' + margin.t + ')');
 
-
 var map2 = d3.select("#MapPlot2")
     .append('svg')
     .attr('width', width2)
@@ -64,12 +63,12 @@ var pathGenerator1 = d3.geo.path().projection(projection1);
 var pathGenerator2 = d3.geo.path().projection(projection2);
 //
 //TODO: create a color scale
-
 var mapBNodes;
 var mapHNodes;
 //TODO: create a d3.map() to store the value of airbnb room number per block group
 var airbnbRoom = d3.map();
 //TODO: import data, parse, and draw
+
 
 var q = queue()
     .defer(d3.json, 'data/bos_neighborhoods.json')

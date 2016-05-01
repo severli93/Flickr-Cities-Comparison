@@ -1,9 +1,3 @@
-$color: rgb(255, 235, 157);
-
-.MapPlots{
-  color: $color;
-}
-
 .barchartDiv {
   path {
     fill: none;
@@ -13,8 +7,8 @@ $color: rgb(255, 235, 157);
   }
 }
 
-$boston: rgb(200, 70, 70);
-$hefei: rgb(70, 70, 200);
+$boston: #ED7164;
+$hefei: #5258F7;
 
 .boston {
   fill: $boston;
@@ -26,12 +20,12 @@ $hefei: rgb(70, 70, 200);
 
 #MapPlot1 {
   path {
-    fill: rgba(200, 70, 70, 0.3);
+    fill:  #ED7164;
   }
 }
 
 #MapPlot2 {
   path{
-    fill: rgba(70, 70, 200, 0.3);
+    fill: #5258F7;
   }
 }

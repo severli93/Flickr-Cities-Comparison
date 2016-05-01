@@ -109,7 +109,7 @@ body { font-family: sans-serif; }
 	border: 0px;
 	border-radius: 8px;
 	pointer-events: none;
-  height: 95px;
+  height: 45px;
   opacity: 0.9;
   position: absolute;
   float: right;
